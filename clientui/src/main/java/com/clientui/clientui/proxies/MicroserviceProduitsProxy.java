@@ -12,14 +12,14 @@ import java.util.List;
 
 
 
-@FeignClient(name = "microservice-produits")
+@FeignClient(name = "gateway-server")
 @RibbonClient(name = "microservice-produits")
 
 public interface MicroserviceProduitsProxy {
-  @GetMapping(value = "/Produits")
+  @GetMapping(value = "/microservice-produits/Produits")
   List<ProductBean> listeDesProduits();
 
-  @GetMapping( value = "/Produits/{id}")
+  @GetMapping( value = "/microservice-produits/Produits/{id}")
   ProductBean recupererUnProduit(@PathVariable("id") int id);
 
 }
